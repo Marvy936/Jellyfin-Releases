@@ -16,8 +16,13 @@ installer is currently unsigned. Back up
 `%LOCALAPPDATA%\JellyfinLibraryCompanion` before installing or uninstalling;
 uninstall removes that complete application-data directory.
 
-The application checks this repository for update metadata only. It never
-downloads or executes an installer automatically.
+Versions through `0.1.1` use this repository for update metadata only. Packaged
+Windows builds starting with `0.1.2` can download and install an update after an
+explicit user confirmation. Before installation, the app requires the exact
+version-matched EXE and checksum assets, verifies the declared download size and
+SHA-256, and creates a verified local backup. It then closes the app, runs the
+installer, and reopens the installed version. There is no unattended or
+background installer execution.
 
 ## Release provenance
 

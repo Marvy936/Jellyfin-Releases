@@ -11,5 +11,8 @@ approved private-source tag CI bundle. Recompute and compare SHA-256 before
 publication. Never overwrite an existing version/tag with different content.
 
 The installer is unsigned until Authenticode evidence says otherwise. Keep the
-check-only/manual-install trust boundary: this repository must not introduce
-automatic installer download or execution.
+explicit user-confirmation trust boundary: never introduce unattended or
+background installer execution. Packaged Windows builds may download and run
+the exact version-matched installer only after the user confirms the update,
+the declared size and SHA-256 checksum pass, and a verified local backup is
+created.
